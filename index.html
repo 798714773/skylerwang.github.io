@@ -9,24 +9,48 @@
         body {
             font-size: 16px;
             background-color: #1e1e1e;
-            color: #d4d4d4;
+            color: #171717;
+        }
+        .latter{
+            padding-top: 10px;
+            margin-top: 10px;
+            border-top: 1px solid #171717;
         }
     </style>
+    <script>
+        window.onload = function(){
+            let latter = document.querySelector('.latter');
+            let i = 0;
+            document.onclick = function(){
+                i++;
+                if(i >= 17){
+                    document.body.style.color = '#d4d4d4';
+                    latter.style.borderTop = '1px solid #d4d4d4';
+                    document.onclick = null;
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
-    Skyler Wang
+    
     <div id="date"></div>
     <div id="time"></div>
 
-    Meeting you is my luckiest thing.
-
-    Looking forward to the day I meet you.
-
     <div class="latter">
-        Dear skyler 
-        I 
+        2020-08-25 Qixi Festival<br />
+        Skyler Wang<br />
+        Meeting you is my luckiest thing.
+        Looking forward to the day I meet you.
     </div>
+<!-- 
+    <div class="latter">
+        2020-08-25 Qixi Festival<br />
+        Skyler Wang<br />
+        Meeting you is my luckiest thing.
+        Looking forward to the day I meet you.
+    </div> -->
 
     <script>
 
