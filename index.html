@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Skyler Wang</title>
+    <style>
+        body {
+            font-size: 16px;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+        }
+    </style>
+</head>
+
+<body>
+    Skyler Wang
+    <div id="date"></div>
+    <div id="time"></div>
+
+    Meeting you is my luckiest thing.
+
+    Looking forward to the day I meet you.
+
+    <div class="latter">
+        Dear skyler 
+        I 
+    </div>
+
+    <script>
+
+        let oDate = document.getElementById('date');
+        let oTime = document.getElementById('time');
+
+        oDate.innerHTML = 'Wechat friend: 2020/08/18 07:49:00';
+
+        function time() {
+            let date1 = '2020/08/18 07:49:00';
+            let date2 = new Date();
+            let date3 = date2.getTime() - new Date(date1).getTime();
+
+            var days = Math.floor(date3 / (24 * 3600 * 1000))
+            //计算出小时数
+            var leave1 = date3 % (24 * 3600 * 1000)    //计算天数后剩余的毫秒数
+            var hours = Math.floor(leave1 / (3600 * 1000))
+            //计算相差分钟数
+            var leave2 = leave1 % (3600 * 1000)        //计算小时数后剩余的毫秒数
+            var minutes = Math.floor(leave2 / (60 * 1000))
+            //计算相差秒数
+            var leave3 = leave2 % (60 * 1000)      //计算分钟数后剩余的毫秒数
+            var seconds = Math.round(leave3 / 1000)
+
+            oTime.innerHTML = "Love you " + days + " day " + hours + " hour " + minutes + " minute " + seconds + " second"
+        }
+
+        time();
+
+        setInterval(() => {
+            time();
+        }, 1000);
+    </script>
+</body>
+
+</html>
